@@ -11,7 +11,7 @@
         }
         .grid{
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
+            font-size: 1em;
             display: grid;
             grid-template-columns: repeat(5, 20%);
             grid-template-rows: repeat(3, 100%);
@@ -20,6 +20,7 @@
             justify-items: center;
             align-items: center;
             text-align: center;
+            margin-bottom: 100px;
         }
         div{
             text-transform: uppercase;
@@ -33,20 +34,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-right: 5%;
+            padding-left: 5%;
         }
         .medium{
             background-color: aquamarine;
             grid-column-start: 3;
             grid-column-end: 4;
             grid-row-start: 1;
-            grid-row-end: 5;
+            grid-row-end: 4;
         }
         .large{
             background-color: yellow;
             grid-column-start: 4;
             grid-column-end: 6;
             grid-row-start: 2;
-            grid-row-end: 5;
+            grid-row-end: 4;
         }
         @media(max-width: 1060px){
             .grid{
