@@ -48,6 +48,26 @@
             grid-row-start: 2;
             grid-row-end: 5;
         }
+        @media(max-width: 1060px){
+            .grid{
+                grid-template-columns: repeat(2, 50%);
+                grid-template-rows: repeat(5, 100%);
+            }
+            .medium{
+            background-color: aquamarine;
+            grid-column-start: unset;
+            grid-column-end: unset;
+            grid-row-start: unset;
+            grid-row-end: unset;
+            }
+            .large{
+                background-color: yellow;
+                grid-column-start: unset;
+                grid-column-end: unset;
+                grid-row-start: unset;
+                grid-row-end: unset;
+            }
+        }
     </style>
 </head>
 <body>
