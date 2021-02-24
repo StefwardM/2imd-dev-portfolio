@@ -51,7 +51,8 @@
         @media(max-width: 1060px){
             .grid{
                 grid-template-columns: repeat(2, 50%);
-                grid-template-rows: repeat(5, 100%);
+                grid-template-rows: repeat(5, 80%);
+                margin: 60px;
             }
             .medium{
             background-color: aquamarine;
@@ -67,6 +68,12 @@
                 grid-row-start: unset;
                 grid-row-end: unset;
             }
+        }
+        @media(max-width: 770px){
+            .grid{
+                grid-template-columns: repeat(1, 100%);
+                grid-template-rows: repeat(10, 30%);
+                margin: 20px;
         }
     </style>
 </head>
