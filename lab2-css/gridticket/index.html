@@ -113,6 +113,9 @@
             align-items: center;
             justify-content: center;
         }
+        .img{
+            max-width: 190px;
+        }
         @media(max-width:540px){
             .ticket{
                 grid-template-columns: 1fr 1fr;
@@ -122,18 +125,20 @@
             .item.item1{
                 align-items: flex-start;
 
-                padding-top: 5%;
+                padding-top: 4%;
 
                 font-size:30px;
                 color:white;
+                letter-spacing: 0.2em;
 
                 background-color: black;
             }
             .item.item2{
                 align-items: flex-end;
 
-                padding-bottom: 5%;
+                padding-bottom: 4%;
 
+                font-weight: normal;
                 color: white;
             }
             .item.item3{
@@ -156,8 +161,8 @@
                 grid-row: 2 / 3;
                 border: none;
             }
-            img{
-                width: 60%;
+            .img{
+                max-width: 60%;
             }
         }
     </style>
@@ -172,7 +177,7 @@
             <div class="item item4">ADMIT ONE</div>
             <div class="item item5">TICKET €15</div>
             <div class="item item6">Being frustrated with CSS Grid is included in the ticket price</div>
-            <div class="item item7"><img src="images/qr.png" alt="QR Code" width="80%"></div>
+            <div class="item item7"><img class="img" src="images/qr.png" alt="QR Code"></div>
 
     </div>
 </body>
