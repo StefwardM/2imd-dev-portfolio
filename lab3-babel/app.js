@@ -72,6 +72,7 @@ class App {
     }
 
     reset() {
+        this.txtTodo.value = "";
         // this function should reset the form / clear the text field
     }
 }
