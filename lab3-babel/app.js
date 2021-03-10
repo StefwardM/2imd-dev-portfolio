@@ -29,6 +29,10 @@ class Note {
     }
 
     remove() {
+        let listItems = document.getElementsByTagName("li");
+        for (let i = 0; i < listItems.length; i++) {
+            listItems[i].onclick = function() {this.parentNode.removeChild(this);}
+        }
         // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
         // in this function, 'this' will refer to the current note element
         // .removeChild(this)
