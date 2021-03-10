@@ -81,7 +81,9 @@ class App {
             /*let li = document.createElement('li');
             li.innerHTML = tasks[i];
             document.querySelector("#taskList").appendChild(li);
-            console.log(tasks[i]);*/
+            console.log(tasks[i]);
+            Was bugged, didn't let me delete after reloading page. Probably because the program didn't see it as a note I thought.
+            */
         }
     }
 
