@@ -1,6 +1,7 @@
 class Note {
     constructor(title) {
         this.title = title;
+        this.element = this.createElement(title);
         // HINT🤩 this.element = this.createElement(title);
     }
 
@@ -8,6 +9,7 @@ class Note {
         let newNote = document.createElement("li");
 
         // HINT🤩 newNote.addEventListener('click', this.remove.bind(newNote));
+        newNote.addEventListener('click', this.remove.bind(newNote));
 
         return newNote;
     }
@@ -15,6 +17,9 @@ class Note {
     add() {
         // HINT🤩
         // this function should append the note to the screen somehow
+        let todo = document.querySelector("#taskList").appendChild(this.element);
+        todo.innerHTML = this.title;
+        //document.querySelector();
     }
 
     saveToStorage() {
@@ -35,6 +40,8 @@ class App {
     constructor() {
         console.log("👊🏼 The Constructor!");
 
+        this.txtTodo = document.querySelector("#taskInput");
+        this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
         // HINT🤩
         // pressing the enter key in the text field triggers the createNote function
         // this.txtTodo = ???
@@ -50,6 +57,12 @@ class App {
     }
 
     createNote(e) {
+        if (e.key === "Enter"){
+            let note = new Note(this.txtTodo.value);
+            note.add();
+            this.reset();
+            e.preventDefault();
+        }
         // this function should create a new note by using the Note() class
         // HINT🤩
         // note.add();
