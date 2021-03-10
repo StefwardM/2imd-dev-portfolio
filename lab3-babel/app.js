@@ -2,6 +2,7 @@ class Note {
     constructor(title) {
         this.title = title;
         this.element = this.createElement(title);
+        //this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         // HINT🤩 this.element = this.createElement(title);
     }
 
@@ -23,6 +24,11 @@ class Note {
     }
 
     saveToStorage() {
+            let list = JSON.parse(localStorage.getItem('tasks'));
+            if(list == null) list = [];
+            list.push(this.title);
+            localStorage.setItem('tasks', JSON.stringify(list));
+
         // HINT🤩
         // localStorage only supports strings, not arrays
         // if you want to store arrays, look at JSON.parse and JSON.stringify
@@ -64,6 +70,7 @@ class App {
         if (e.key === "Enter"){
             let note = new Note(this.txtTodo.value);
             note.add();
+            note.saveToStorage();
             this.reset();
             e.preventDefault();
         }
