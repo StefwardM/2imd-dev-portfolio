@@ -35,14 +35,22 @@ class Note {
     }
 
     remove() {
-        let listItems = document.getElementsByTagName("li");
-        for (let i = 0; i < listItems.length; i++) {
-            listItems[i].onclick = function() {this.parentNode.removeChild(this);}
-        }
-        // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
+        // HINT:star_struck: the meaning of 'this' was set by bind() in the createElement function
         // in this function, 'this' will refer to the current note element
         // .removeChild(this)
         // remove the item from screen and from localstorage
+
+        document.getElementById("taskList").removeChild(this);
+        let value = this.innerText;
+
+        let tasks = localStorage.getItem("tasks");
+        tasks = JSON.parse(tasks) || [];
+
+        let index = tasks.indexOf(value);
+        console.log(index);
+        tasks.splice(index, 1);
+        console.log(tasks);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 }
 
@@ -52,6 +60,7 @@ class App {
 
         this.txtTodo = document.querySelector("#taskInput");
         this.txtTodo.addEventListener("keypress", this.createNote.bind(this));
+        this.loadNotesFromStorage();
         // HINT🤩
         // pressing the enter key in the text field triggers the createNote function
         // this.txtTodo = ???
@@ -64,6 +73,16 @@ class App {
     loadNotesFromStorage() {
         // HINT🤩
         // load all notes from storage here and add them to the screen
+        let tasks = localStorage.getItem("tasks");
+        tasks = JSON.parse(tasks) || [];
+        for(let i =0; i < tasks.length; i++){
+            let note = new Note(tasks[i]);
+            note.add();
+            /*let li = document.createElement('li');
+            li.innerHTML = tasks[i];
+            document.querySelector("#taskList").appendChild(li);
+            console.log(tasks[i]);*/
+        }
     }
 
     createNote(e) {
