@@ -1,0 +1,48 @@
+#ad{
+    height: 250px;
+    max-width: 300px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+#ad::before {
+    height: 250px;
+    max-width: 300px;
+
+    content: "";
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    background-color: rgba(255,255,255,0.55);
+}
+
+#ad p{
+    font-family: Arial;
+    font-size: 1.5em;
+
+    position: relative;
+
+    color: black;
+
+    line-height: 0.9;
+    text-align: center;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+

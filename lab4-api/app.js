@@ -40,14 +40,14 @@ class App{
                 return response.json();
             }).then(data => {
                 localStorage.setItem('storedWeather', JSON.stringify(data));
-                document.querySelector("#weather").innerHTML = data.current.temp + data.current.weather[0].description;
+                document.querySelector("#weather").innerHTML = data.current.weather[0].description;
                 console.log("is niet naar else gegaan");
             }).catch(err => {
                 console.log(err);
             })
         }
         else{
-            document.querySelector("#weather").innerHTML = this.weather.current.temp + this.weather.current.weather[0].description;
+            document.querySelector("#weather").innerHTML = this.weather.current.weather[0].description;
             console.log("is naar else gegaan");
         }
 
@@ -62,7 +62,7 @@ class App{
                 console.log(data);
                 localStorage.setItem('storedLaunches', JSON.stringify(data));
                 document.querySelector("#ad").style.backgroundImage = `url(${data.results[0].feature_image}`;
-                document.querySelector("#launch").innerHTML = data.results[0].date;
+                document.querySelector("#launch").innerHTML = "The next rocket launch is at " + data.results[0].date + " " + data.launches.results[0].description;
             }).catch(err => {
                 console.log(err);
             })
@@ -70,8 +70,8 @@ class App{
 
             else{
 
-                    document.querySelector("#ad").style.backgroundImage = `url(${this.launches.results.feature_image}`;
-                    document.querySelector("#launch").innerHTML = this.launches.results[0].date;
+                    document.querySelector("#ad").style.backgroundImage = `url(${this.launches.results[0].feature_image}`;
+                    document.querySelector("#launch").innerHTML ="The next rocket launch is at " + this.launches.results[0].date + " " + this.launches.results[0].description;
 
             }
 
