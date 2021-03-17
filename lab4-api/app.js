@@ -44,10 +44,10 @@ class App{
                 if(data.current.weather[0].description != "clear sky") {
                     localStorage.setItem('storedWeather', JSON.stringify(data));
                     document.querySelector("#weather").innerHTML = "Seems like there is " + data.current.weather[0].description + " though, so you won't be able to see it :(";
-                    document.querySelector("#telescope").innerHTML = "Prepare for the next time by buying a telescope " + result +"!";
+                    document.querySelector("#telescope").innerHTML = "Prepare for the next time by buying a telescope " + result +"! 🚀";
                 }
                 else{
-                    document.querySelector("#weather").innerHTML = "There's a " + data.current.weather[0].description + "! Have fun watching the launch :)";
+                    document.querySelector("#weather").innerHTML = "There's a " + data.current.weather[0].description + "! Have fun watching the launch 🚀";
                     document.querySelector("#telescope").innerHTML = "Buy a telescope " + result +" for a better view!";
                 }
                 console.log("is niet naar else gegaan");
@@ -58,10 +58,10 @@ class App{
         else{
             if(this.weather.current.weather[0].description != "clear sky"){
                 document.querySelector("#weather").innerHTML = "Seems like there is " + this.weather.current.weather[0].description + " though, so you won't be able to see it :(";
-                document.querySelector("#telescope").innerHTML = "Prepare for the next time by buying a telescope " + result +"!";
+                document.querySelector("#telescope").innerHTML = "Prepare for the next time by buying a telescope " + result +"! 🚀";
             }
             else{
-                document.querySelector("#weather").innerHTML = "There's a " + this.weather.current.weather[0].description + "! Have fun watching the launch :)";
+                document.querySelector("#weather").innerHTML = "There's a " + this.weather.current.weather[0].description + "! Have fun watching the launch 🚀";
                 document.querySelector("#telescope").innerHTML = "Buy a telescope " + result +" for a better view!";
             }
         }
