@@ -35,8 +35,6 @@ class App{
 
     getWeather(){
         let url = `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/onecall?lat=${this.lat}&lon=${this.lng}&appid=0a925e098c03f24e81080451fedc7ae6&units=metric`;
-        var str = "here";
-        let result = str.link("https://www.verrekijkergigant.be/telescoop");
         if(this.weather == ""){
             fetch(url).then(response => {
                 return response.json();
@@ -44,11 +42,11 @@ class App{
                 if(data.current.weather[0].description != "clear sky") {
                     localStorage.setItem('storedWeather', JSON.stringify(data));
                     document.querySelector("#weather").innerHTML = "Seems like there is " + data.current.weather[0].description + " though, so you won't be able to see it :(";
-                    document.querySelector("#telescope").innerHTML = "Prepare for the next time by buying a telescope " + result +"! 🚀";
+                    document.querySelector("#telescope").innerHTML = "Better prepare by buying a telescope! 🚀";
                 }
                 else{
                     document.querySelector("#weather").innerHTML = "There's a " + data.current.weather[0].description + "! Have fun watching the launch 🚀";
-                    document.querySelector("#telescope").innerHTML = "Buy a telescope " + result +" for a better view!";
+                    document.querySelector("#telescope").innerHTML = "Buy a telescope for a better view!";
                 }
                 console.log("is niet naar else gegaan");
             }).catch(err => {
@@ -58,7 +56,7 @@ class App{
         else{
             if(this.weather.current.weather[0].description != "clear sky"){
                 document.querySelector("#weather").innerHTML = "Seems like there is " + this.weather.current.weather[0].description + " though, so you won't be able to see it :(";
-                document.querySelector("#telescope").innerHTML = "Prepare for the next time by buying a telescope " + result +"! 🚀";
+                document.querySelector("#telescope").innerHTML = "Better prepare by buying a telescope " + result +"! 🚀";
             }
             else{
                 document.querySelector("#weather").innerHTML = "There's a " + this.weather.current.weather[0].description + "! Have fun watching the launch 🚀";
@@ -77,7 +75,7 @@ class App{
                 console.log(data);
                 localStorage.setItem('storedLaunches', JSON.stringify(data));
                 document.querySelector("#ad").style.backgroundImage = `url(${data.results[0].feature_image}`;
-                document.querySelector("#launch").innerHTML = "The next rocket launch is at " + data.results[0].date + " " + data.results[0].description;
+                document.querySelector("#launch").innerHTML = "The next rocket launch is at " + data.results[0].date.substring(0,10) + " " + data.results[0].description;
             }).catch(err => {
                 console.log(err);
             })
@@ -85,7 +83,7 @@ class App{
             else{
 
                     document.querySelector("#ad").style.backgroundImage = `url(${this.launches.results[0].feature_image}`;
-                    document.querySelector("#launch").innerHTML ="The next rocket launch is at " + this.launches.results[0].date + " " + this.launches.results[0].description;
+                    document.querySelector("#launch").innerHTML ="The next rocket launch is at " + this.launches.results[0].date.substring(0,10) + " " + this.launches.results[0].description;
 
             }
 
