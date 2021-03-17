@@ -16,12 +16,19 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    line-height: 2;
+    line-height: 2;;
 
 }
 
+.megadiv{
+    background-color:darkgreen;
+    position: absolute;
+    width: 300px;
+    height: 600px;
+}
+
 #ad::before {
-    height: 250px;
+    height: 600px;
     max-width: 300px;
 
     content: "";
@@ -34,7 +41,7 @@
 
     background-color: rgba(255,255,255,0.55);
 
-    border: 5px solid black;
+
 }
 
 #ad p{
@@ -44,21 +51,65 @@
     font-family: Arial;
     font-size: 1em;
 
-    position: relative;
-
     color: black;
 
     line-height: 0.9;
     text-align: center;
 
     line-height: 1.1;
+    color: white;
+
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
+#launch{
+    position: absolute;
+    top: 300px;
+    left: 1px;
+}
+#weather{
+    position: absolute;
+    top: 390px;
+    left: 1px;
+}
+
+#verrekijker{
+    font-weight: bold;
+
+    background-image: url("https://www.verrekijkergigant.be/skin/frontend/argento/default/images/logo620.png");
+
+    height: 70px;
+    width: 290px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 90px;
+    left: 5px;
+}
 #telescope{
+    position: absolute;
+    top: 500px;
+    max-width: 280px;
+    text-align: center;
+}
+
+.btn{
+    position: absolute;
+    top: 500px;
+    left: 30px;
+    text-decoration: none;
+    padding: 1em 2em;
+    background-color: white;
+    color: forestgreen;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Arial;
     font-weight: bold;
 }
+
+
 
