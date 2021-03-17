@@ -1,6 +1,9 @@
 #ad{
     height: 250px;
     max-width: 300px;
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,6 +16,7 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
+    line-height: 2;
 }
 
 #ad::before {
@@ -31,8 +35,11 @@
 }
 
 #ad p{
+    align-items: center;
+    justify-content: center;
+
     font-family: Arial;
-    font-size: 1.5em;
+    font-size: 1em;
 
     position: relative;
 
@@ -40,9 +47,15 @@
 
     line-height: 0.9;
     text-align: center;
+
+    line-height: 1.1;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+#telescope{
+    font-weight: bold;
 }
 
